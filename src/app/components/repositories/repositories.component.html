@@ -1,1 +1,34 @@
-<p>repositories works!</p>
+<header>
+    <h2> User's Github Repositories </h2> 
+    <h5> View The Archive </h5>
+</header>
+
+<div class="container">
+     <div class="wrapper" *ngFor="let repo of repos" >
+          <div class="header-items">
+               <div class="folder">
+                    <svg width="40px" height="40px" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="#64ffda" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder"><title>Folder</title><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+               </div>
+               <div class="project-links">
+                    <fa-icon size="lg" class="hover-color" [icon]="githubIcon" (click)="repoLink(repo.repo_url)" ></fa-icon>
+                    <svg *ngIf="repo.live_link" (click)="liveLink(repo.live_link)" width="25px" height="25px" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><title>External Link</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+               </div>
+          </div>
+          <div class="info">
+               <h3 class="repo"> {{ repo.name }} </h3>
+               <p>{{ repo.description }}</p>
+          </div>
+          <div class="stats">
+               <div class="stat-one">
+                    <span> <fa-icon [icon]="forkIcon"></fa-icon>{{ repo.forks }}</span>
+                    <span> <fa-icon [icon]="starIcon"></fa-icon>{{ repo.watchers }}</span>
+               </div>
+               <div class="stat-two">
+                    <span>{{ repo.mainlang }}</span>
+               </div>
+          </div>
+          <div class="footer">
+               <span>{{ repo.created_at|date }}</span>
+          </div>
+     </div>     
+</div>
