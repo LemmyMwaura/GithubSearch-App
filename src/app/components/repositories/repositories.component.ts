@@ -14,6 +14,7 @@ export class RepositoriesComponent implements OnInit {
   githubIcon = faGithub
   forkIcon = faCodeBranch
   starIcon = faStar
+  search!:string
 
   constructor(private repoService:RepoService ) { }
 
@@ -26,7 +27,8 @@ export class RepositoriesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   
+    this.repoService.repoRequest(this.search)
+    this.repos = this.repoService.repoArr
   }
 
   newUserName(search:string){

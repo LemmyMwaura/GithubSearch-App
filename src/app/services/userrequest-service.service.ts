@@ -15,8 +15,9 @@ export class UserrequestService {
   }
 
   userRequest(searchName:string) {
+    if (searchName == null || undefined) return
     let promise = new Promise((resolve, reject) => {
-      this.http
+      this.http 
         .get<any>(`${this.URL}${searchName}`)
         .toPromise()
         .then(

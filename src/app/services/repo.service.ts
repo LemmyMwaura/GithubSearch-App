@@ -12,11 +12,12 @@ export class RepoService {
 
   constructor(private http: HttpClient) {}
 
-  repoRequest(search:string) {
+  repoRequest(searchName:string) {
+    if (searchName == null || undefined) return
     this.repoArr = []
     let promise = new Promise((resolve, reject) => {
       this.http
-        .get<any>(`${this.URL}${search}/repos`)
+        .get<any>(`${this.URL}${searchName}/repos`)
         .toPromise()
         .then(
           (response) => {

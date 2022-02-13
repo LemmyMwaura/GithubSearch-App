@@ -27,7 +27,10 @@ export class UserComponent implements OnInit {
   constructor(private requestService:UserrequestService) {
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.requestService.userRequest(this.search)
+    this.user = this.requestService.user
+  }
 
   newUsername(search:string){
     this.search = search
