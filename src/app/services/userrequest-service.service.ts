@@ -8,17 +8,16 @@ import { User } from '../classes/user';
 })
 export class UserrequestService {
   URL ='https://api.github.com/users/'
-  searchName = 'LemmyMwaura'
   user!: User;
 
   constructor(private http:HttpClient) {
-    this.user = new User("", "","", 0, 0,"","","","","","")
+    this.user = new User("", "","", 0, 0,"","","","","","");
   }
 
-  userRequest() {
+  userRequest(searchName:string) {
     let promise = new Promise((resolve, reject) => {
       this.http
-        .get<any>(`${this.URL}${this.searchName}`)
+        .get<any>(`${this.URL}${searchName}`)
         .toPromise()
         .then(
           (response) => {

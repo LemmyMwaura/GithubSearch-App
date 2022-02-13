@@ -7,16 +7,16 @@ import { Repo } from '../classes/repo';
 })
 export class RepoService {
   URL = 'https://api.github.com/users/';
-  searchName = 'LemmyMwaura';
   repo!: Repo;
   repoArr: any[] = [];
 
   constructor(private http: HttpClient) {}
 
-  repoRequest() {
+  repoRequest(search:string) {
+    this.repoArr = []
     let promise = new Promise((resolve, reject) => {
       this.http
-        .get<any>(`${this.URL}${this.searchName}/repos`)
+        .get<any>(`${this.URL}${search}/repos`)
         .toPromise()
         .then(
           (response) => {
@@ -35,7 +35,7 @@ export class RepoService {
                 res.homepage,
               );
               this.repoArr.push(this.repo);
-              console.log(this.repo)
+              // console.log(this.repo)
             });
             resolve(response);
           },
