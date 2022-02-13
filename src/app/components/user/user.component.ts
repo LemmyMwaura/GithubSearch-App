@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { UserrequestService } from 'src/app/services/userrequest-service.service';
 import { User } from 'src/app/classes/user';
 import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
@@ -10,6 +10,10 @@ import { faBuilding, faMapPin, faEnvelope, faUser, faLink } from "@fortawesome/f
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
+
+  @Output() onSubmitForm:EventEmitter<string> = new EventEmitter
+  search!:string
+
   user!:User
   twitterIcon = faTwitter
   githubIcon = faGithub
@@ -23,8 +27,12 @@ export class UserComponent implements OnInit {
   constructor(private requestService:UserrequestService) {
   }
 
-  ngOnInit(): void {
-    this.requestService.userRequest()
+  ngOnInit(): void {}
+
+  newUsername(search:string){
+    this.search = search
+    this.onSubmitForm.emit(this.search)
+    this.requestService.userRequest(search)
     this.user = this.requestService.user
     console.log(this.user)
   }

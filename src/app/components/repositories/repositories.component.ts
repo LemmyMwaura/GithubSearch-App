@@ -26,7 +26,11 @@ export class RepositoriesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.repoService.repoRequest()
+   
+  }
+
+  newUserName(search:string){
+    this.repoService.repoRequest(search)
     this.repos = this.repoService.repoArr
   }
 }
