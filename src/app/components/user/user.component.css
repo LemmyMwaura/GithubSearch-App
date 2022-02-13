@@ -1,0 +1,45 @@
+::root{
+    --maincolor:#64ffda;
+    --textcolormain: #c6d1f1;
+    --textcolorsec: #919cba;
+    --Itembgcolor:#112240;
+    --bgcolorsec: #09182e;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 1.5rem;
+    height: auto;
+    min-width: 90vw;
+    /* background: #112240; */
+}
+
+.image{
+    width: 250px;
+    height: 250px;
+    border-radius: 0.3rem;
+    border: 2px solid #64f0a9;
+}
+.details{
+    text-align: left;
+}
+
+.details h1{
+    font-size: 4.5rem;
+}
+
+.details h4{
+    font-size: 1.3rem;
+    color: #919cba;
+    margin-bottom: 0.5rem ;
+}
+
+.mini-details{
+    margin-top: 0.5rem;
+}

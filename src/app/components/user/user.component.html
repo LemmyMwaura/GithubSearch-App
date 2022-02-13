@@ -1,1 +1,22 @@
-<p>user works!</p>
+
+<div class="container">
+    <div class="wrapper">
+        <div class="details">
+            <h1>{{ user.name }}</h1>
+            <h4>{{ user.bio }}</h4>
+            <span> <fa-icon [ngStyle]="{'color':iconcolor}" [icon]="userIcon"  ></fa-icon> Followers: {{ user.followers }}
+                  Following: {{ user.following }}
+            </span>
+            <div class="mini-details">
+                <h5 *ngIf="user.company"> <fa-icon [icon]="companyIcon" [ngStyle]="{'color': '#64ffda' }"></fa-icon> {{ user.company }}</h5>
+                <h5 *ngIf="user.email"> <fa-icon [icon]="emailIcon" [styles]="{'color':'#64ffda'}"></fa-icon> {{ user.email }}</h5>
+                <h5 *ngIf="user.blog" class="blog"> <fa-icon [icon]="linkIcon" [styles]="{'color':'#64ffda'}"></fa-icon> {{ user.blog }}</h5>
+                <h5 *ngIf="user.location"> <fa-icon [icon]="locationIcon" [styles]="{'color':'#64ffda'}"></fa-icon> {{ user.location }}</h5>
+                <h5 *ngIf="user.twitter"> <fa-icon [icon]="twitterIcon" [styles]="{'color':'#64ffda'}"></fa-icon> {{ user.twitter }}</h5>
+            </div>
+        </div>
+        <div class="profile">
+            <img class="image" [src]="user.image">
+        </div>
+    </div>
+</div>
