@@ -9,6 +9,7 @@ export class Repo {
     public stars: number,
     public visibility: number,
     public created_at: number,
-    public mainlang: string
+    public mainlang: string,
+    public live_link:any
   ) {}
 }
