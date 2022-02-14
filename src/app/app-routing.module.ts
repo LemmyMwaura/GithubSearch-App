@@ -5,7 +5,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RepositoriesComponent } from './components/repositories/repositories.component';
 
 const routes: Routes = [
-  { path: "forms", component: FormComponent },
+  { path: "home", component: FormComponent },
   { path: "user", component: RepositoriesComponent },
   { path: "**", component: NotFoundComponent },
 

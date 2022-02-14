@@ -96,7 +96,8 @@ input[type='text']{
     background-color:#c6d1f1;
 }
 
-input::placeholder{
+input::placeholder,
+input[type='text']{
     color:#09182e;
     font-size: 1rem;
     font-weight: bold;

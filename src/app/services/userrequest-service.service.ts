@@ -2,12 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { User } from '../classes/user';
-
 @Injectable({
   providedIn: 'root',
 })
 export class UserrequestService {
-  URL ='https://api.github.com/users/'
+  URL =`https://api.github.com/users/`
   user!: User;
 
   constructor(private http:HttpClient) {
@@ -18,7 +17,7 @@ export class UserrequestService {
     if (searchName == null || undefined) return
     let promise = new Promise((resolve, reject) => {
       this.http 
-        .get<any>(`${this.URL}${searchName}`)
+        .get<any>(`${this.URL}${searchName}?access_token'=${environment.TOKEN}`)
         .toPromise()
         .then(
           (response) => {
@@ -36,6 +35,7 @@ export class UserrequestService {
               this.user.accountlink = response.html_url,
               this.user.location = response.location,
             )
+            console.log(response)
             resolve(response);
           },
           (error) => {

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Repo } from '../classes/repo';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -17,7 +18,7 @@ export class RepoService {
     this.repoArr = []
     let promise = new Promise((resolve, reject) => {
       this.http
-        .get<any>(`${this.URL}${searchName}/repos`)
+        .get<any>(`${this.URL}${searchName}/repos?access_token'=${environment.TOKEN}`)
         .toPromise()
         .then(
           (response) => {
