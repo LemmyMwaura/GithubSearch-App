@@ -27,6 +27,10 @@ export class UserComponent implements OnInit {
   constructor(private requestService:UserrequestService) {
   }
 
+  openBlogLink(link:string){
+    window.open(link)
+  }
+
   ngOnInit(): void {
     this.requestService.userRequest(this.search)
     this.user = this.requestService.user

@@ -1,7 +1,7 @@
 <app-user (onSubmitForm)="newUserName($event)"></app-user>
-<header>
-    <h2> User's Github Repositories </h2> 
-    <h5> View The Archive </h5>
+<header *ngIf="repos == true">
+     <h2> User's Github Repositories </h2> 
+     <h5> View The Archive </h5>
 </header>
 <div class="container">
      <div class="wrapper" *ngFor="let repo of repos" >
