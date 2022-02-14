@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { UserrequestService } from 'src/app/services/userrequest-service.service';
 import { User } from 'src/app/classes/user';
 import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faBuilding, faMapPin, faEnvelope, faUser, faLink } from "@fortawesome/free-solid-svg-icons";
+import { faBuilding, faMapMarked, faEnvelope, faUser, faLink } from "@fortawesome/free-solid-svg-icons";
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -18,7 +18,7 @@ export class UserComponent implements OnInit {
   user!:User
   twitterIcon = faTwitter
   githubIcon = faGithub
-  locationIcon = faMapPin
+  locationIcon = faMapMarked
   companyIcon = faBuilding
   emailIcon = faEnvelope
   userIcon = faUser

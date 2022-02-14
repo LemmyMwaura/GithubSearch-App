@@ -1,10 +1,28 @@
-<form action="" #searchForm="ngForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-        <label for="search">Search</label>
-        <input type="text" name="search" id="search" [(ngModel)]="search" recquired placeholder="Enter User's Github Username">
-        <!-- <div [hidden]="search.valid || search.pristine" class="danger">
-            <p>Userame is required</p>
-        </div> -->
-    </div>  
-    <input type="submit" value="Search" class="btn" >
-</form>
+<div class="container">
+    <div class="wrapper">
+        <div class="text">
+            <div class="text-wrapper">
+                <h1 class="one">Search</h1>
+                <h1 class="two">Github</h1>
+                <h1 class="three">Users</h1>
+            </div>
+            <form #searchForm="ngForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    
+                    <input type="text" name="search" id="search" [(ngModel)]="search" recquired placeholder="Github Username">
+                    <!-- <div [hidden]="search.valid || search.pristine" class="danger">
+                        <p>Userame is required</p>
+                    </div> -->
+                </div>  
+                <button type="submit" class="btn"><fa-icon [icon]="searchIcon" size="2x" [ngStyle]="{color:'red'}"></fa-icon></button>
+            </form>
+        </div>
+        <div class="image">
+            <div class="circle one">
+                <div class="circle two">
+                    <fa-icon [icon]="gitIcon" size="10x" [ngStyle]="{color:'red'}"></fa-icon>
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>

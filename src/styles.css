@@ -6,6 +6,7 @@
     --textcolorsec: #919cba;
     --Itembgcolor:#112240;
     --bgcolorsec: #09182e;
+    --bgboldcolorsec: #040c18;
 }
 
 *{
@@ -14,6 +15,15 @@
     padding: 0;
     font-family: 'Roboto Mono', monospace;
     color:#c6d1f1;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    padding: 0;
+    list-style: none;
 }
 
 body{

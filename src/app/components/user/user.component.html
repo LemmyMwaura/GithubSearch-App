@@ -4,27 +4,26 @@
             <h1>{{ user.name }}</h1>
             <h4>{{ user.bio }}</h4>
             <span>
-                <fa-icon [ngStyle]="{'color':iconcolor}" size="lg" [icon]="userIcon"></fa-icon> Followers: {{
+                <fa-icon [ngStyle]="{'color':iconcolor}"  [icon]="userIcon"></fa-icon> Followers: {{
                 user.followers }}
                 Following: {{ user.following }}
             </span>
             <div class="mini-details">
                 <h5 *ngIf="user.company">
-                    <fa-icon [icon]="companyIcon" size="lg" [ngStyle]="{'color': '#64ffda' }"></fa-icon> {{ user.company
-                    }}
+                    <fa-icon [icon]="companyIcon"  [ngStyle]="{'color': '#64ffda' }"></fa-icon> <span>{{ user.company
+                    }}</span> 
                 </h5>
                 <h5 *ngIf="user.email">
-                    <fa-icon [icon]="emailIcon" size="lg" [styles]="{'color':'#64ffda'}"></fa-icon> {{ user.email }}
+                    <fa-icon [icon]="emailIcon"  [styles]="{'color':'#64ffda'}"></fa-icon> <span>{{ user.email }}</span>
                 </h5>
                 <h5 *ngIf="user.blog" (click)="openBlogLink(user.blog)" class="blog">
-                    <fa-icon [icon]="linkIcon" size="lg" [styles]="{'color':'#64ffda'}"></fa-icon> {{ user.blog }}
+                    <fa-icon [icon]="linkIcon"  [styles]="{'color':'#64ffda'}"></fa-icon> <span>{{ user.blog }}</span>
                 </h5>
                 <h5 *ngIf="user.location">
-                    <fa-icon [icon]="locationIcon" size="2x" [styles]="{'color':'#64ffda'}"></fa-icon> {{ user.location
-                    }}
+                    <fa-icon [icon]="locationIcon"  [styles]="{'color':'#64ffda'}"></fa-icon> <span>{{ user.location }}</span>
                 </h5>
                 <h5 *ngIf="user.twitter">
-                    <fa-icon [icon]="twitterIcon" size="lg" [styles]="{'color':'#64ffda'}"></fa-icon> {{ user.twitter }}
+                    <fa-icon [icon]="twitterIcon"  [styles]="{'color':'#64ffda'}"></fa-icon> <span>{{ user.twitter }}</span>
                 </h5>
             </div>
         </div>

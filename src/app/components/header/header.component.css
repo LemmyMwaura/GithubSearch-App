@@ -1,0 +1,22 @@
+nav{ 
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    height: 4rem;
+    padding: 0 2rem;
+}
+
+.nav-items{
+    display: flex;
+    gap: 2rem;
+}
+
+li::before{
+    content: attr(data-number);
+    color: #64ffda;
+    margin-right: 0.2rem;
+}
+
+a:hover{
+    color:#64ffda;
+}
