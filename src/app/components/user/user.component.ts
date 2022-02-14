@@ -3,6 +3,7 @@ import { UserrequestService } from 'src/app/services/userrequest-service.service
 import { User } from 'src/app/classes/user';
 import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faBuilding, faMapPin, faEnvelope, faUser, faLink } from "@fortawesome/free-solid-svg-icons";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -24,7 +25,7 @@ export class UserComponent implements OnInit {
   linkIcon = faLink
   iconcolor = '#64ffda'
 
-  constructor(private requestService:UserrequestService) {
+  constructor(private requestService:UserrequestService, private route:ActivatedRoute) {
   }
 
   openBlogLink(link:string){
@@ -32,15 +33,11 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.requestService.userRequest(this.search)
-    this.user = this.requestService.user
-  }
-
-  newUsername(search:string){
-    this.search = search
-    this.onSubmitForm.emit(this.search)
-    this.requestService.userRequest(search)
-    this.user = this.requestService.user
-    console.log(this.user)
+    this.route.queryParams.subscribe((params:any) => {
+      this.search = params.data
+      this.onSubmitForm.emit(this.search)
+      this.requestService.userRequest(this.search)
+      this.user = this.requestService.user
+    })
   }
 }
