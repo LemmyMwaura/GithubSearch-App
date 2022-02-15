@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: "user", component: RepositoriesComponent },
   { path: "**", component: NotFoundComponent },
 
-  { path: '', redirectTo:"/forms", pathMatch:"full"},
+  { path: '', redirectTo:"/home", pathMatch:"full"},
 ];
 
 @NgModule({
