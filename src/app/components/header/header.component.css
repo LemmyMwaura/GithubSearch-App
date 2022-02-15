@@ -4,6 +4,7 @@ nav{
     justify-content: space-between;
     height: 4rem;
     padding: 0 2rem;
+    margin-bottom: 2rem;
 }
 
 .nav-items{
@@ -26,4 +27,13 @@ a:hover{
     width: 100%;
     z-index: 100;
     color: red;
+}
+
+.logo {
+    border: 1px solid #64ffda;
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+    font-weight: bold;
+    color:#64ffda;
+    cursor: pointer;
 }
