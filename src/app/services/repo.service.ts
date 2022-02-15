@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Repo } from '../classes/repo';
 import { environment } from 'src/environments/environment';
-
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root',
 })
@@ -11,7 +11,7 @@ export class RepoService {
   repo!: Repo;
   repoArr: any[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router:Router) {}
 
   repoRequest(searchName:string) {
     if (searchName == null || undefined) return
@@ -37,12 +37,11 @@ export class RepoService {
                 res.homepage,
               );
               this.repoArr.push(this.repo);
-              // console.log(this.repo)
             });
             resolve(response);
           },
           (error) => {
-            this.repo.name = 'Noname';
+            error.status = 404 ? this.router.navigate(["/**"]) : console.error(error);
             reject(error);
           }
         );

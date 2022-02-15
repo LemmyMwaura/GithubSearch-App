@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { User } from '../classes/user';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root',
 })
@@ -9,7 +10,7 @@ export class UserrequestService {
   URL =`https://api.github.com/users/`
   user!: User;
 
-  constructor(private http:HttpClient) {
+  constructor(private http:HttpClient, private router:Router) {
     this.user = new User("", "","", 0, 0,"","","","","","");
   }
 
@@ -35,11 +36,10 @@ export class UserrequestService {
               this.user.accountlink = response.html_url,
               this.user.location = response.location,
             )
-            console.log(response)
             resolve(response);
           },
           (error) => {
-            console.log('error')
+            error.status = 404 ? this.router.navigate(["/**"]) : console.error(error);
             reject(error);
           }
         )
