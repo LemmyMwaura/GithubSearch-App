@@ -14,6 +14,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FilterpipePipe } from './pipes/filterpipe.pipe';
+import { HighlightDirective } from './directives/highlight.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { FilterpipePipe } from './pipes/filterpipe.pipe';
     HeaderComponent,
     FooterComponent,
     NotFoundComponent,
-    FilterpipePipe
+    FilterpipePipe,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

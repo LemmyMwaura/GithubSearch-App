@@ -10,11 +10,10 @@ export class FilterpipePipe implements PipeTransform {
 
     const repos = []
     for (const repo of value){
-      if (repo['name'] === filterString){
+      if (repo['name'].toLowerCase().includes(filterString.toLowerCase())){
         repos.push(repo);
       }
     }
     return repos;
   }
-
 }

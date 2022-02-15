@@ -53,18 +53,11 @@ input[type='text']{
                 -7px -7px 4px #09182e;
     transition:200ms ease;
     cursor: pointer;
-}
-
-.wrapper:hover{
-    transform: translateY(-1rem);
+    overflow: hidden;
 }
 
 .wrapper:hover .repo{
     color:#64ffda;
-}
-
-.ng-fa-icon.hover-color:hover{
-    color: red;
 }
 
 .header-items{
