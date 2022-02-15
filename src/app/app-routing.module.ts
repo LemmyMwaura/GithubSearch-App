@@ -5,12 +5,11 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RepositoriesComponent } from './components/repositories/repositories.component';
 
 const routes: Routes = [
+  { path: '', redirectTo:"/home", pathMatch:"full"},
   { path: "home", component: FormComponent },
   { path: "user", component: RepositoriesComponent },
-  { path: "**", component: NotFoundComponent },
 
-  { path: 'lemmymwaura.github.io/GithubSearch-App', redirectTo:"/home", pathMatch:"full"},
-  { path: 'quotesearchappbylemmymwaura.netlify.app', redirectTo:"/home", pathMatch:"full"}
+  { path: "**", component: NotFoundComponent },
 ];
 
 @NgModule({
