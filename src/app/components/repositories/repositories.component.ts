@@ -15,6 +15,7 @@ export class RepositoriesComponent implements OnInit {
   forkIcon = faCodeBranch
   starIcon = faStar
   search!:string
+  searchString!:string
 
   constructor(private repoService:RepoService ) { }
 

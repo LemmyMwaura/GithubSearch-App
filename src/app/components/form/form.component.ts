@@ -1,7 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { UserrequestService } from 'src/app/services/userrequest-service.service';
-import { RepoService } from 'src/app/services/repo.service';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faGithubAlt } from '@fortawesome/free-brands-svg-icons';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -17,15 +14,12 @@ export class FormComponent implements OnInit {
   gitIcon = faGithubAlt
   searchIcon = faSearch
 
-  @Output() onSubmitForm:EventEmitter<string> = new EventEmitter
-
-  constructor(private requestService:UserrequestService, private repoService:RepoService, private route:Router) { }
+  constructor(private route:Router) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(){
-    console.log(this.search)
     this.route.navigate(['user'],{queryParams:{data:this.search}})
   }
 }

@@ -13,6 +13,7 @@ import { RepositoriesComponent } from './components/repositories/repositories.co
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { FilterpipePipe } from './pipes/filterpipe.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     RepositoriesComponent,
     HeaderComponent,
     FooterComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FilterpipePipe
   ],
   imports: [
     BrowserModule,

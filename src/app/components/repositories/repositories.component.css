@@ -12,6 +12,26 @@ header h5{
     color:#64ffda
 }
 
+.filter{
+    margin-top: 3rem;
+}
+
+input[type='text']{
+    padding: 1rem;
+    width: 30vw;
+    border: none;
+    outline: none;
+    text-align: center;
+    background-color:#c6d1f1;
+}
+
+input::placeholder,
+input[type='text']{
+    color:#09182e;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
 .container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
