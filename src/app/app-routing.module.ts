@@ -9,7 +9,8 @@ const routes: Routes = [
   { path: "user", component: RepositoriesComponent },
   { path: "**", component: NotFoundComponent },
 
-  { path: '', redirectTo:"/home", pathMatch:"full"},
+  { path: 'lemmymwaura.github.io/GithubSearch-App', redirectTo:"/home", pathMatch:"full"},
+  { path: 'quotesearchappbylemmymwaura.netlify.app', redirectTo:"/home", pathMatch:"full"}
 ];
 
 @NgModule({
