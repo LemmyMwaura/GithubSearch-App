@@ -4,13 +4,13 @@
             <h1>{{ user.name }}</h1>
             <h4>{{ user.bio }}</h4>
             <span>
-                <fa-icon [ngStyle]="{'color':iconcolor}"  [icon]="userIcon"></fa-icon> Followers: {{
+                <fa-icon [styles]="{'color':iconcolor}"  [icon]="userIcon"></fa-icon> Followers: {{
                 user.followers }}
                 Following: {{ user.following }}
             </span>
             <div class="mini-details">
                 <h5 *ngIf="user.company">
-                    <fa-icon [icon]="companyIcon"  [ngStyle]="{'color': '#64ffda' }"></fa-icon> <span>{{ user.company
+                    <fa-icon [icon]="companyIcon"  [styles]="{'color': '#64ffda' }"></fa-icon> <span>{{ user.company
                     }}</span> 
                 </h5>
                 <h5 *ngIf="user.email">

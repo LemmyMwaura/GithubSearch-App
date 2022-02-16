@@ -11,7 +11,6 @@ import { FormComponent } from './components/form/form.component';
 import { UserComponent } from './components/user/user.component';
 import { RepositoriesComponent } from './components/repositories/repositories.component';
 import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FilterpipePipe } from './pipes/filterpipe.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
@@ -22,7 +21,6 @@ import { HighlightDirective } from './directives/highlight.directive';
     UserComponent,
     RepositoriesComponent,
     HeaderComponent,
-    FooterComponent,
     NotFoundComponent,
     FilterpipePipe,
     HighlightDirective

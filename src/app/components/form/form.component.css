@@ -8,18 +8,26 @@
 .container{
     display: grid;
     place-items: center;
+    height: calc(95vh - 5rem);
 }
 .wrapper{
     display: grid;
-    grid-template-columns: 450px auto;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     align-items: center;
     justify-content: center;
-    height: 80vh;
-    width: 70vw;
+    min-width: 70vw;
+    min-height: 80vh;
     background-color: #112240;
     border-radius: 0.3rem;
+    padding: 2rem;
     margin: 1rem;
-    border-radius: 5px 5px 5px ;
+    transform: translateY(-1rem);
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .text-wrapper{
@@ -69,8 +77,8 @@
 }
 
 .circle.one{
-    width: 350px;
-    height: 350px;
+    width: 330px;
+    height: 330px;
     background-color: #64ffda;
     display: grid;
     place-items: center;
@@ -131,3 +139,13 @@ input[type='text']{
         transform: rotate(360deg)
     }
 }
+
+@media screen and (max-width:768px){
+    .wrapper{
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 3rem;
+        padding: 2rem;
+    }
+}
+

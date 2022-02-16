@@ -11,13 +11,13 @@
     justify-content: center;
 }
 .wrapper{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     align-items: center;
     justify-content: space-between;
     padding: 2rem 1.5rem;
     height: auto;
     min-width: 90vw;
-    /* background: #112240; */
 }
 
 .image{
@@ -55,4 +55,29 @@
 
 .blog{
     cursor: pointer;
+}
+
+.profile{
+    text-align: right;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .wrapper{
+        display:flex;
+        flex-direction:column-reverse;
+        gap: 3rem;
+    }
+
+    .details{
+        align-self: start;
+    }
+
+    .details h1{
+        font-size: 3rem;
+    }
+
+    .profile{
+        align-self: start;
+    }
 }

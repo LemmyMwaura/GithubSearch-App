@@ -7,12 +7,8 @@
                 <h1 class="three">Users</h1>
             </div>
             <form #searchForm="ngForm" (ngSubmit)="onSubmit()">
-                <div class="form-group">
-                    
+                <div class="form-group">  
                     <input type="text" name="search" id="search" [(ngModel)]="search" recquired placeholder="Github Username">
-                    <!-- <div [hidden]="search.valid || search.pristine" class="danger">
-                        <p>Userame is required</p>
-                    </div> -->
                 </div>  
                 <button type="submit" class="btn"><fa-icon [icon]="searchIcon" size="2x" [ngStyle]="{color:'red'}"></fa-icon></button>
             </form>
